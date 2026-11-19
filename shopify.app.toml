@@ -1,0 +1,26 @@
+# Run `shopify app config link` to fill in client_id and application_url
+# from your Partner Dashboard app, then `shopify app deploy`.
+client_id = ""
+name = "OrbitPros AI Ops Setup"
+application_url = "https://REPLACE-WITH-YOUR-HOST"
+embedded = true
+
+[access_scopes]
+scopes = "read_products"
+
+[auth]
+redirect_urls = []
+
+[webhooks]
+api_version = "2026-10"
+
+  [[webhooks.subscriptions]]
+  compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+  uri = "/webhooks/compliance"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false

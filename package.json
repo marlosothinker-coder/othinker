@@ -1,0 +1,16 @@
+{
+  "name": "orbitpros-ai-ops-setup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Embedded Shopify app that walks a store owner through connecting their tools to Claude or ChatGPT.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/main.js",
+    "dev": "node --disable-warning=ExperimentalWarning --env-file=.env --watch src/main.js",
+    "check-connectors": "node --disable-warning=ExperimentalWarning src/check-connectors.js",
+    "test": "node --disable-warning=ExperimentalWarning --test"
+  }
+}
